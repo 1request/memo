@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D1DA993119683E8A001E9E42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DA993019683E8A001E9E42 /* Images.xcassets */; };
 		D1DA993419684BD8001E9E42 /* icong-120.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DA993319684BD8001E9E42 /* icong-120.png */; };
+		D1DA993619684EFF001E9E42 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA993519684EFF001E9E42 /* CoreLocation.framework */; };
+		D1DA993819684F05001E9E42 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA993719684F05001E9E42 /* CoreBluetooth.framework */; };
 		F44B0C4316DA404700E6CD88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B0C4216DA404700E6CD88 /* UIKit.framework */; };
 		F44B0C4516DA404700E6CD88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B0C4416DA404700E6CD88 /* Foundation.framework */; };
 		F44B0C4716DA404700E6CD88 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B0C4616DA404700E6CD88 /* CoreGraphics.framework */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		D1DA993019683E8A001E9E42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D1DA993319684BD8001E9E42 /* icong-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icong-120.png"; sourceTree = "<group>"; };
+		D1DA993519684EFF001E9E42 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D1DA993719684F05001E9E42 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		F44B0C3F16DA404700E6CD88 /* AudioDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44B0C4216DA404700E6CD88 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F44B0C4416DA404700E6CD88 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1DA993819684F05001E9E42 /* CoreBluetooth.framework in Frameworks */,
+				D1DA993619684EFF001E9E42 /* CoreLocation.framework in Frameworks */,
 				F44B0C6616DD09D900E6CD88 /* AVFoundation.framework in Frameworks */,
 				F44B0C4316DA404700E6CD88 /* UIKit.framework in Frameworks */,
 				F44B0C4516DA404700E6CD88 /* Foundation.framework in Frameworks */,
@@ -71,7 +77,6 @@
 		F44B0C3616DA404700E6CD88 = {
 			isa = PBXGroup;
 			children = (
-				F44B0C6516DD09D900E6CD88 /* AVFoundation.framework */,
 				F44B0C4816DA404700E6CD88 /* AudioDemo */,
 				F44B0C4116DA404700E6CD88 /* Frameworks */,
 				F44B0C4016DA404700E6CD88 /* Products */,
@@ -89,6 +94,9 @@
 		F44B0C4116DA404700E6CD88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F44B0C6516DD09D900E6CD88 /* AVFoundation.framework */,
+				D1DA993719684F05001E9E42 /* CoreBluetooth.framework */,
+				D1DA993519684EFF001E9E42 /* CoreLocation.framework */,
 				F44B0C4216DA404700E6CD88 /* UIKit.framework */,
 				F44B0C4416DA404700E6CD88 /* Foundation.framework */,
 				F44B0C4616DA404700E6CD88 /* CoreGraphics.framework */,

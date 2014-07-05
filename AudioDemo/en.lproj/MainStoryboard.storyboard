@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="6154.17" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" promptedForUpgradeToXcode5="NO" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
@@ -46,22 +45,36 @@
                                     <action selector="stopTapped:" destination="2" eventType="touchUpInside" id="EmS-eH-XGc"/>
                                 </connections>
                             </button>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="kuK-rD-fJu">
+                                <rect key="frame" x="20" y="389" width="280" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="j9t-4h-ox0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kuK-rD-fJu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="1qY-Yd-8M0"/>
                             <constraint firstItem="chQ-Xu-KeN" firstAttribute="top" secondItem="3" secondAttribute="top" constant="103" id="8eA-0T-SBP"/>
+                            <constraint firstItem="kuK-rD-fJu" firstAttribute="centerX" secondItem="Xtk-3T-WBS" secondAttribute="centerX" type="default" id="Pie-Sq-gRh"/>
+                            <constraint firstAttribute="bottom" secondItem="Xtk-3T-WBS" secondAttribute="bottom" constant="191" id="QDq-KA-rAh"/>
+                            <constraint firstItem="kuK-rD-fJu" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Qre-Nu-ebZ"/>
+                            <constraint firstAttribute="bottom" secondItem="kuK-rD-fJu" secondAttribute="bottom" constant="104" id="buI-0O-ojO"/>
                             <constraint firstItem="chQ-Xu-KeN" firstAttribute="centerX" secondItem="Xtk-3T-WBS" secondAttribute="centerX" type="default" id="h3S-vK-wwU"/>
-                            <constraint firstItem="chQ-Xu-KeN" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="mSX-sG-FE4"/>
-                            <constraint firstAttribute="bottom" secondItem="Xtk-3T-WBS" secondAttribute="bottom" constant="191" id="qTb-oq-ZGO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="chQ-Xu-KeN" id="4p4-Ak-VmY"/>
                         <outlet property="recordPauseButton" destination="Xtk-3T-WBS" id="gDS-40-lNB"/>
+                        <outlet property="statusLabel" destination="kuK-rD-fJu" id="41U-gD-Kq9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="423" y="268"/>
         </scene>
     </scenes>
     <resources>

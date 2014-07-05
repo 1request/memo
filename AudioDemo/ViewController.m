@@ -11,6 +11,8 @@
 @interface ViewController () {
     AVAudioRecorder *recorder;
     AVAudioPlayer *player;
+    
+    BOOL fileExists;
 }
 
 @end
@@ -23,7 +25,6 @@
     [super viewDidLoad];
 	
     // Disable Stop/Play button when application launches
-    [stopButton setEnabled:NO];
     [playButton setEnabled:NO];
     
     // Set the audio file
@@ -52,6 +53,21 @@
     recorder.delegate = self;
     recorder.meteringEnabled = YES;
     [recorder prepareToRecord];
+    
+    // Beacon
+    if (!self.locationManager) {
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+    }
+    
+    NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:kUUID_Estimote];
+    CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID major:1000 minor:2000 identifier:@"beacon"];
+    beaconRegion.notifyEntryStateOnDisplay = YES;
+    beaconRegion.notifyOnEntry = YES;
+    beaconRegion.notifyOnExit = YES;
+    
+    [self.locationManager startRangingBeaconsInRegion:beaconRegion];
+    [self.locationManager startMonitoringForRegion:beaconRegion];
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,11 +97,11 @@
         [recordPauseButton setTitle:@"Record" forState:UIControlStateNormal];
     }
 
-    [playButton setEnabled:NO];
 }
 
 - (IBAction)stopTapped:(id)sender {
     [recorder stop];
+    fileExists = YES;
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setActive:NO error:nil];
@@ -103,7 +119,6 @@
 
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
     [recordPauseButton setTitle:@"Record" forState:UIControlStateNormal];
-    [playButton setEnabled:YES];
 }
 
 #pragma mark - AVAudioPlayerDelegate
@@ -112,5 +127,77 @@
     NSLog(@"Finish playing");
 }
 
+#pragma mark - Beacon
+
+#pragma mark - Location manager delegate methods
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (![CLLocationManager locationServicesEnabled]) {
+        NSLog(@"Couldn't turn on monitoring: Location services are not enabled.");
+        return;
+    }
+    
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
+        NSLog(@"Couldn't turn on monitoring: Location services not authorised.");
+    }
+    
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways) {
+        NSLog(@"Couldn't turn on monitoring: Location services (Always) not authorised.");
+        return;
+    }
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+        didRangeBeacons:(NSArray *)beacons
+               inRegion:(CLBeaconRegion *)region {
+    
+    NSLog(@"%s Range region: %@ with beacons %@",__PRETTY_FUNCTION__ ,region , beacons);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLBeaconRegion *)region
+{
+    NSLog(@"Entered region: %@", region);
+    
+    self.statusLabel.text = @"Entered Region";
+    
+    if (fileExists) {
+        [playButton setEnabled:YES];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLBeaconRegion *)region
+{
+    NSLog(@"Exited region: %@", region);
+    
+    self.statusLabel.text = @"Exited Region";
+    
+    [playButton setEnabled:NO];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
+{
+    NSString *stateString = nil;
+    switch (state) {
+        case CLRegionStateInside:
+            stateString = @"inside";
+            break;
+        case CLRegionStateOutside:
+            stateString = @"outside";
+            break;
+        case CLRegionStateUnknown:
+            stateString = @"unknown";
+            break;
+    }
+    NSLog(@"State changed to %@ for region %@.", stateString, region);
+    
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error
+{
+    NSString *message = [NSString stringWithFormat:@"error: %@ / region: %@", [error description], region.minor];
+    NSLog(@"%@", message);
+}
 
 @end

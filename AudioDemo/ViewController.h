@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
+static NSString * const kUUID_Estimote = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+
+@interface ViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *recordPauseButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 - (IBAction)recordPauseTapped:(id)sender;
 - (IBAction)stopTapped:(id)sender;
