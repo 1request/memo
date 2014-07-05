@@ -128,9 +128,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F44B0C3E16DA404700E6CD88 /* AudioDemo */ = {
+		F44B0C3E16DA404700E6CD88 /* Memo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F44B0C6216DA404700E6CD88 /* Build configuration list for PBXNativeTarget "AudioDemo" */;
+			buildConfigurationList = F44B0C6216DA404700E6CD88 /* Build configuration list for PBXNativeTarget "Memo" */;
 			buildPhases = (
 				F44B0C3B16DA404700E6CD88 /* Sources */,
 				F44B0C3C16DA404700E6CD88 /* Frameworks */,
@@ -140,7 +140,7 @@
 			);
 			dependencies = (
 			);
-			name = AudioDemo;
+			name = Memo;
 			productName = AudioDemo;
 			productReference = F44B0C3F16DA404700E6CD88 /* AudioDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -166,7 +166,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F44B0C3E16DA404700E6CD88 /* AudioDemo */,
+				F44B0C3E16DA404700E6CD88 /* Memo */,
 			);
 		};
 /* End PBXProject section */
@@ -317,7 +317,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F44B0C6216DA404700E6CD88 /* Build configuration list for PBXNativeTarget "AudioDemo" */ = {
+		F44B0C6216DA404700E6CD88 /* Build configuration list for PBXNativeTarget "Memo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F44B0C6316DA404700E6CD88 /* Debug */,
