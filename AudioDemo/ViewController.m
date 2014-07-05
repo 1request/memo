@@ -18,6 +18,7 @@
     AVPlayer *avPlayer;
     
     BOOL fileDownloaded;
+    NSTimer *playTimer;
 }
 
 @end
@@ -218,9 +219,18 @@
             PFFile *audioFile = testObject[@"audioFile"];
             NSString *filePath = [audioFile url];
             
+            // No record / No audio file
             if (filePath == nil) {
                 self.statusLabel.text = @"No Memo";
                 return;
+            }
+            
+            // Do nothing if current memo is the same as the most updated one on server
+            if (fileDownloaded) {
+                NSString *memoId = [[NSUserDefaults standardUserDefaults] objectForKey:@"memoId"];
+                if (memoId != nil && memoId == [testObject objectId]) {
+                    return;
+                }
             }
             
             //play audiofile streaming
@@ -230,6 +240,7 @@
             [playButton setEnabled:YES];
             
             fileDownloaded = YES;
+            playTimer = [NSTimer scheduledTimerWithTimeInterval:60 * 1000 target:self selector:@selector(timeout) userInfo:nil repeats:NO];
             
             self.statusLabel.text = @"Downloaded";
         } else {
@@ -237,6 +248,14 @@
             NSLog(@"error = %@", [error userInfo]);
         }
     }];
+}
+
+- (void)timeout
+{
+    [playTimer invalidate];
+    playTimer = nil;
+    [playButton setEnabled:NO];
+    self.locationLabel.text = @"Region Timeout";
 }
 
 #pragma mark - Beacon
@@ -273,11 +292,7 @@
     
     self.locationLabel.text = @"Entered Region";
     
-    if (!fileDownloaded) {
-        [self downloadAudio];
-    } else {
-        [playButton setEnabled:YES];
-    }
+    [self downloadAudio];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLBeaconRegion *)region
@@ -286,7 +301,9 @@
     
     self.locationLabel.text = @"Exited Region";
     
-    [playButton setEnabled:NO];
+    if (playTimer == nil) {
+        [playButton setEnabled:NO];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
