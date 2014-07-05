@@ -15,48 +15,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chQ-Xu-KeN">
-                                <rect key="frame" x="130" y="103" width="60" height="60"/>
+                                <rect key="frame" x="64" y="62" width="192" height="192"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="IPp-b3-aPj"/>
-                                    <constraint firstAttribute="height" constant="60" id="Mvj-fz-g0x"/>
+                                    <constraint firstAttribute="height" constant="192" id="VUF-sf-jCL"/>
+                                    <constraint firstAttribute="width" constant="192" id="fyp-OO-51E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" image="icong-120.png">
+                                <state key="normal" image="playback.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="playTapped:" destination="2" eventType="touchUpInside" id="wh9-AI-a10"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtk-3T-WBS">
-                                <rect key="frame" x="122" y="212" width="76" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="76" id="4er-5I-ROL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="19"/>
-                                <state key="normal" title="Record">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="recordPauseTapped:" destination="2" eventType="touchDown" id="zRy-aE-s4E"/>
-                                    <action selector="stopTapped:" destination="2" eventType="touchUpInside" id="EmS-eH-XGc"/>
-                                </connections>
-                            </button>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="MQt-jh-XYX">
-                                <rect key="frame" x="20" y="427" width="280" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="o7M-WJ-vED"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="kuK-rD-fJu">
-                                <rect key="frame" x="20" y="364" width="280" height="55"/>
+                                <rect key="frame" x="20" y="410" width="280" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="j9t-4h-ox0"/>
                                 </constraints>
@@ -64,19 +37,42 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="MQt-jh-XYX">
+                                <rect key="frame" x="20" y="473" width="280" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtk-3T-WBS">
+                                <rect key="frame" x="101" y="342" width="119" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="iYS-Ra-Jsh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="record.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="record"/>
+                                <state key="highlighted" image="record.png"/>
+                                <connections>
+                                    <action selector="recordPauseTapped:" destination="2" eventType="touchDown" id="zRy-aE-s4E"/>
+                                    <action selector="stopTapped:" destination="2" eventType="touchUpInside" id="EmS-eH-XGc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kuK-rD-fJu" secondAttribute="bottom" constant="83" id="1mV-5H-l6l"/>
                             <constraint firstAttribute="trailing" secondItem="kuK-rD-fJu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="1qY-Yd-8M0"/>
-                            <constraint firstItem="chQ-Xu-KeN" firstAttribute="top" secondItem="3" secondAttribute="top" constant="103" id="8eA-0T-SBP"/>
-                            <constraint firstAttribute="bottom" secondItem="MQt-jh-XYX" secondAttribute="bottom" constant="66" id="9dc-qM-sMu"/>
-                            <constraint firstItem="Xtk-3T-WBS" firstAttribute="top" secondItem="3" secondAttribute="top" constant="212" id="LGs-FW-0Ia"/>
-                            <constraint firstItem="kuK-rD-fJu" firstAttribute="centerX" secondItem="Xtk-3T-WBS" secondAttribute="centerX" type="default" id="Pie-Sq-gRh"/>
+                            <constraint firstItem="kuK-rD-fJu" firstAttribute="top" secondItem="Xtk-3T-WBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1wG-HS-wII"/>
+                            <constraint firstItem="Xtk-3T-WBS" firstAttribute="centerX" secondItem="kuK-rD-fJu" secondAttribute="centerX" type="default" id="A63-EI-hap"/>
+                            <constraint firstItem="chQ-Xu-KeN" firstAttribute="top" secondItem="3" secondAttribute="top" constant="62" id="GT1-Oe-bUp"/>
+                            <constraint firstAttribute="bottom" secondItem="MQt-jh-XYX" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="GVq-XW-PJr"/>
                             <constraint firstItem="kuK-rD-fJu" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Qre-Nu-ebZ"/>
                             <constraint firstItem="MQt-jh-XYX" firstAttribute="trailing" secondItem="kuK-rD-fJu" secondAttribute="trailing" type="default" id="Tx8-VD-8I3"/>
-                            <constraint firstItem="chQ-Xu-KeN" firstAttribute="centerX" secondItem="Xtk-3T-WBS" secondAttribute="centerX" type="default" id="h3S-vK-wwU"/>
                             <constraint firstItem="MQt-jh-XYX" firstAttribute="leading" secondItem="kuK-rD-fJu" secondAttribute="leading" type="default" id="kDa-ea-QMD"/>
-                            <constraint firstItem="MQt-jh-XYX" firstAttribute="top" secondItem="kuK-rD-fJu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pgR-a5-EKv"/>
+                            <constraint firstItem="MQt-jh-XYX" firstAttribute="top" secondItem="kuK-rD-fJu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ngd-hK-bel"/>
+                            <constraint firstItem="Xtk-3T-WBS" firstAttribute="centerX" secondItem="chQ-Xu-KeN" secondAttribute="centerX" type="default" id="uIK-Wy-P1U"/>
                         </constraints>
                     </view>
                     <connections>
@@ -92,7 +88,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icong-120.png" width="120" height="120"/>
+        <image name="playback.png" width="320" height="320"/>
+        <image name="record" width="60" height="60"/>
+        <image name="record.png" width="60" height="60"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

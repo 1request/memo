@@ -22,6 +22,8 @@
 		D1DA994A19685B93001E9E42 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA994919685B93001E9E42 /* SystemConfiguration.framework */; };
 		D1DA994B196866B8001E9E42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B0C4416DA404700E6CD88 /* Foundation.framework */; };
 		D1DA994D19686C99001E9E42 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA994C19686C99001E9E42 /* CoreMedia.framework */; };
+		D1DA9950196879C9001E9E42 /* playback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DA994E196879C9001E9E42 /* playback@2x.png */; };
+		D1DA9951196879C9001E9E42 /* record@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DA994F196879C9001E9E42 /* record@2x.png */; };
 		F44B0C4316DA404700E6CD88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B0C4216DA404700E6CD88 /* UIKit.framework */; };
 		F44B0C4716DA404700E6CD88 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B0C4616DA404700E6CD88 /* CoreGraphics.framework */; };
 		F44B0C4D16DA404700E6CD88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F44B0C4B16DA404700E6CD88 /* InfoPlist.strings */; };
@@ -50,6 +52,8 @@
 		D1DA994719685B89001E9E42 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D1DA994919685B93001E9E42 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D1DA994C19686C99001E9E42 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D1DA994E196879C9001E9E42 /* playback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "playback@2x.png"; path = "../../../../../../Desktop/App/Memo/playback@2x.png"; sourceTree = "<group>"; };
+		D1DA994F196879C9001E9E42 /* record@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "record@2x.png"; path = "../../../../../../Desktop/App/Memo/record@2x.png"; sourceTree = "<group>"; };
 		F44B0C3F16DA404700E6CD88 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44B0C4216DA404700E6CD88 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F44B0C4416DA404700E6CD88 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +103,8 @@
 		D1DA993219684BD8001E9E42 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D1DA994E196879C9001E9E42 /* playback@2x.png */,
+				D1DA994F196879C9001E9E42 /* record@2x.png */,
 				D1DA993319684BD8001E9E42 /* icong-120.png */,
 			);
 			path = images;
@@ -225,8 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F44B0C4D16DA404700E6CD88 /* InfoPlist.strings in Resources */,
+				D1DA9951196879C9001E9E42 /* record@2x.png in Resources */,
 				F44B0C5516DA404700E6CD88 /* Default.png in Resources */,
 				F44B0C5716DA404700E6CD88 /* Default@2x.png in Resources */,
+				D1DA9950196879C9001E9E42 /* playback@2x.png in Resources */,
 				D1DA993419684BD8001E9E42 /* icong-120.png in Resources */,
 				D1DA993119683E8A001E9E42 /* Images.xcassets in Resources */,
 				F44B0C5916DA404700E6CD88 /* Default-568h@2x.png in Resources */,

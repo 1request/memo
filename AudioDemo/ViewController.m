@@ -17,7 +17,6 @@
     
     AVPlayer *avPlayer;
     
-    BOOL fileExists;
     BOOL fileDownloaded;
 }
 
@@ -70,6 +69,15 @@
         self.locationManager.delegate = self;
     }
     
+    if (![CLLocationManager isMonitoringAvailableForClass:[CLBeaconRegion class]]) {
+        NSLog(@"Couldn't turn on region monitoring: Region monitoring is not available for CLBeaconRegion class.");
+        return;
+    }
+    
+    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [self.locationManager requestAlwaysAuthorization];
+    }
+    
     NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:kUUID_Estimote];
     CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID major:1000 minor:2000 identifier:@"beacon"];
     beaconRegion.notifyEntryStateOnDisplay = YES;
@@ -98,13 +106,16 @@
         
         // Start recording
         [recorder record];
-        [recordPauseButton setTitle:@"Pause" forState:UIControlStateNormal];
+        
+        self.statusLabel.text = @"Recording...";
 
     } else {
 
         // Pause recording
         [recorder pause];
-        [recordPauseButton setTitle:@"Record" forState:UIControlStateNormal];
+        
+        self.statusLabel.text = @"Record Pause";
+        
     }
 
 }
@@ -131,13 +142,17 @@
 
 #pragma mark - AVAudioRecorderDelegate
 
-- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
-    [recordPauseButton setTitle:@"Record" forState:UIControlStateNormal];
+- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag
+{
+    self.statusLabel.text = @"Recorded";
+    NSLog(@"Finish recording");
 }
 
 #pragma mark - AVAudioPlayerDelegate
 
-- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
+- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    self.statusLabel.text = @"Played";
     NSLog(@"Finish playing");
 }
 
@@ -145,6 +160,8 @@
 
 - (void)uploadAudio
 {
+    self.statusLabel.text = @"Uploading...";
+    
     NSString *vendorId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     
     PFObject *testObject = [PFObject objectWithClassName:@"Memo"];
@@ -157,12 +174,9 @@
     testObject[@"audioFile"] = audioFile;
     testObject[@"deviceId"] = vendorId;
     
-    self.statusLabel.text = @"Uploading...";
-    
     //save
     [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            fileExists = YES;
             self.statusLabel.text = @"Uploaded";
         }
     }];
@@ -175,10 +189,20 @@
         [avPlayer play];
         avPlayer.actionAtItemEnd = AVPlayerActionAtItemEndNone;
         
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(playerItemDidReachEnd:)
+                                                     name:AVPlayerItemDidPlayToEndTimeNotification
+                                                   object:[avPlayer currentItem]];
+        
         self.statusLabel.text = @"Playing";
     } else {
-        self.statusLabel.text = @"No Memo";
+        self.statusLabel.text = @"Player not ready";
     }
+}
+
+- (void)playerItemDidReachEnd:(NSNotification *)notification
+{
+    self.statusLabel.text = @"Play Finished";
 }
 
 - (void)downloadAudio
@@ -193,6 +217,11 @@
             PFObject *testObject = [objects lastObject];
             PFFile *audioFile = testObject[@"audioFile"];
             NSString *filePath = [audioFile url];
+            
+            if (filePath == nil) {
+                self.statusLabel.text = @"No Memo";
+                return;
+            }
             
             //play audiofile streaming
             avPlayer = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:filePath]];
@@ -244,11 +273,9 @@
     
     self.locationLabel.text = @"Entered Region";
     
-    if (fileExists && !fileDownloaded) {
+    if (!fileDownloaded) {
         [self downloadAudio];
-    }
-    
-    if (fileDownloaded) {
+    } else {
         [playButton setEnabled:YES];
     }
 }
