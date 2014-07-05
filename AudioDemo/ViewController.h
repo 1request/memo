@@ -19,6 +19,7 @@ static NSString * const kUUID_Estimote = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D"
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 - (IBAction)recordPauseTapped:(id)sender;
 - (IBAction)stopTapped:(id)sender;

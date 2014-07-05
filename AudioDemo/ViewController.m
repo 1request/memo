@@ -6,13 +6,19 @@
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 
+#include "TargetConditionals.h"
+
 #import "ViewController.h"
+#import <Parse/Parse.h>
 
 @interface ViewController () {
     AVAudioRecorder *recorder;
     AVAudioPlayer *player;
     
+    AVPlayer *avPlayer;
+    
     BOOL fileExists;
+    BOOL fileDownloaded;
 }
 
 @end
@@ -25,7 +31,11 @@
     [super viewDidLoad];
 	
     // Disable Stop/Play button when application launches
+#if !(TARGET_IPHONE_SIMULATOR)
     [playButton setEnabled:NO];
+#else
+    [self downloadAudio];
+#endif
     
     // Set the audio file
     NSArray *pathComponents = [NSArray arrayWithObjects:
@@ -101,17 +111,21 @@
 
 - (IBAction)stopTapped:(id)sender {
     [recorder stop];
-    fileExists = YES;
+    [self uploadAudio];
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setActive:NO error:nil];
 }
 
 - (IBAction)playTapped:(id)sender {
-    if (!recorder.recording){
-        player = [[AVAudioPlayer alloc] initWithContentsOfURL:recorder.url error:nil];
-        [player setDelegate:self];
-        [player play];
+    if (!recorder.recording) {
+        // Play audio just recorded
+//        player = [[AVAudioPlayer alloc] initWithContentsOfURL:recorder.url error:nil];
+//        [player setDelegate:self];
+//        [player play];
+        
+        // Play audio downloaded from Parse
+        [self playAudio];
     }
 }
 
@@ -125,6 +139,75 @@
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     NSLog(@"Finish playing");
+}
+
+#pragma mark - Parse
+
+- (void)uploadAudio
+{
+    NSString *vendorId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"Memo"];
+    
+    //get the audio in NSData format
+    NSData *audioData = [NSData dataWithContentsOfURL:recorder.url];
+    
+    //create PFFile to store audio data
+    PFFile *audioFile = [PFFile fileWithName:@"memo.m4a" data:audioData];
+    testObject[@"audioFile"] = audioFile;
+    testObject[@"deviceId"] = vendorId;
+    
+    self.statusLabel.text = @"Uploading...";
+    
+    //save
+    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            fileExists = YES;
+            self.statusLabel.text = @"Uploaded";
+        }
+    }];
+}
+
+- (void)playAudio
+{
+    if (avPlayer != nil) {
+        [avPlayer seekToTime:kCMTimeZero];
+        [avPlayer play];
+        avPlayer.actionAtItemEnd = AVPlayerActionAtItemEndNone;
+        
+        self.statusLabel.text = @"Playing";
+    } else {
+        self.statusLabel.text = @"No Memo";
+    }
+}
+
+- (void)downloadAudio
+{
+    self.statusLabel.text = @"Downloading...";
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Memo"];
+    [query whereKeyExists:@"audioFile"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error)
+        {
+            PFObject *testObject = [objects lastObject];
+            PFFile *audioFile = testObject[@"audioFile"];
+            NSString *filePath = [audioFile url];
+            
+            //play audiofile streaming
+            avPlayer = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:filePath]];
+            avPlayer.volume = 1.0f;
+            
+            [playButton setEnabled:YES];
+            
+            fileDownloaded = YES;
+            
+            self.statusLabel.text = @"Downloaded";
+        } else {
+            
+            NSLog(@"error = %@", [error userInfo]);
+        }
+    }];
 }
 
 #pragma mark - Beacon
@@ -159,9 +242,13 @@
 {
     NSLog(@"Entered region: %@", region);
     
-    self.statusLabel.text = @"Entered Region";
+    self.locationLabel.text = @"Entered Region";
     
-    if (fileExists) {
+    if (fileExists && !fileDownloaded) {
+        [self downloadAudio];
+    }
+    
+    if (fileDownloaded) {
         [playButton setEnabled:YES];
     }
 }
@@ -170,7 +257,7 @@
 {
     NSLog(@"Exited region: %@", region);
     
-    self.statusLabel.text = @"Exited Region";
+    self.locationLabel.text = @"Exited Region";
     
     [playButton setEnabled:NO];
 }
