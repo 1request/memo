@@ -179,6 +179,11 @@
     [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             self.statusLabel.text = @"Uploaded";
+            
+            PFPush *push = [[PFPush alloc] init];
+            [push setChannel:@"all"];
+            [push setMessage:@"You've got a new Memo"];
+            [push sendPushInBackground];
         }
     }];
 }

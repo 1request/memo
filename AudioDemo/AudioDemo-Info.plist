@@ -30,6 +30,10 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Memo wants to leave you a voice message</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
