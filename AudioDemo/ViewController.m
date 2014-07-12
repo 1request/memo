@@ -155,6 +155,11 @@
 {
     self.statusLabel.text = @"Played";
     NSLog(@"Finish playing");
+    
+    PFPush *push = [[PFPush alloc] init];
+    [push setChannel:@"all"];
+    [push setMessage:@"Your message is read"];
+    [push sendPushInBackground];
 }
 
 #pragma mark - Parse
