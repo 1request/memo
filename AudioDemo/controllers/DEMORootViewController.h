@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Appcoda. All rights reserved.
 //
 
-#import "REFrostedContainerViewController.h"
+#import "REFrostedViewController.h"
 
-@interface DEMORootViewController : REFrostedContainerViewController
+@interface DEMORootViewController : REFrostedViewController
 
 @end

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		934032D6C6F24D389D78C2FC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD00C19D0E446F1A825C931 /* libPods.a */; };
+		D1392E0C19781EB600D1A7AA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1392E0B19781EB600D1A7AA /* Social.framework */; };
+		D1392E0E19781EE900D1A7AA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1392E0D19781EE900D1A7AA /* Accounts.framework */; };
+		D1CABBAD197882DB00A8EED7 /* DEMORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CABBAC197882DB00A8EED7 /* DEMORootViewController.m */; };
+		D1CABBB01978848800A8EED7 /* DEMOMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CABBAF1978848800A8EED7 /* DEMOMenuViewController.m */; };
+		D1CABBB71978862300A8EED7 /* DEMOHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CABBB11978862300A8EED7 /* DEMOHomeViewController.m */; };
+		D1CABBB81978862300A8EED7 /* DEMONavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CABBB21978862300A8EED7 /* DEMONavigationController.m */; };
+		D1CABBB91978862300A8EED7 /* DEMOSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CABBB31978862300A8EED7 /* DEMOSecondViewController.m */; };
+		D1CABBBB1978879E00A8EED7 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CABBBA1978879E00A8EED7 /* FacebookSDK.framework */; };
 		D1DA993119683E8A001E9E42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DA993019683E8A001E9E42 /* Images.xcassets */; };
 		D1DA993419684BD8001E9E42 /* icong-120.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DA993319684BD8001E9E42 /* icong-120.png */; };
 		D1DA993619684EFF001E9E42 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA993519684EFF001E9E42 /* CoreLocation.framework */; };
@@ -40,6 +49,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46C3A11359284D41A559A4DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		9FD00C19D0E446F1A825C931 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1392E0B19781EB600D1A7AA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		D1392E0D19781EE900D1A7AA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		D1CABBAB197882DB00A8EED7 /* DEMORootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMORootViewController.h; path = controllers/DEMORootViewController.h; sourceTree = "<group>"; };
+		D1CABBAC197882DB00A8EED7 /* DEMORootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEMORootViewController.m; path = controllers/DEMORootViewController.m; sourceTree = "<group>"; };
+		D1CABBAE1978848800A8EED7 /* DEMOMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMOMenuViewController.h; path = controllers/DEMOMenuViewController.h; sourceTree = "<group>"; };
+		D1CABBAF1978848800A8EED7 /* DEMOMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEMOMenuViewController.m; path = controllers/DEMOMenuViewController.m; sourceTree = "<group>"; };
+		D1CABBB11978862300A8EED7 /* DEMOHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEMOHomeViewController.m; path = controllers/DEMOHomeViewController.m; sourceTree = "<group>"; };
+		D1CABBB21978862300A8EED7 /* DEMONavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEMONavigationController.m; path = controllers/DEMONavigationController.m; sourceTree = "<group>"; };
+		D1CABBB31978862300A8EED7 /* DEMOSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEMOSecondViewController.m; path = controllers/DEMOSecondViewController.m; sourceTree = "<group>"; };
+		D1CABBB41978862300A8EED7 /* DEMOHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMOHomeViewController.h; path = controllers/DEMOHomeViewController.h; sourceTree = "<group>"; };
+		D1CABBB51978862300A8EED7 /* DEMONavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMONavigationController.h; path = controllers/DEMONavigationController.h; sourceTree = "<group>"; };
+		D1CABBB61978862300A8EED7 /* DEMOSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMOSecondViewController.h; path = controllers/DEMOSecondViewController.h; sourceTree = "<group>"; };
+		D1CABBBA1978879E00A8EED7 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		D1DA993019683E8A001E9E42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D1DA993319684BD8001E9E42 /* icong-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icong-120.png"; sourceTree = "<group>"; };
 		D1DA993519684EFF001E9E42 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -82,6 +106,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1392E0E19781EE900D1A7AA /* Accounts.framework in Frameworks */,
+				D1CABBBB1978879E00A8EED7 /* FacebookSDK.framework in Frameworks */,
+				D1392E0C19781EB600D1A7AA /* Social.framework in Frameworks */,
 				D1DA994D19686C99001E9E42 /* CoreMedia.framework in Frameworks */,
 				D1DA994B196866B8001E9E42 /* Foundation.framework in Frameworks */,
 				D1DA994A19685B93001E9E42 /* SystemConfiguration.framework in Frameworks */,
@@ -98,12 +125,30 @@
 				F44B0C6616DD09D900E6CD88 /* AVFoundation.framework in Frameworks */,
 				D1DA993A19685B01001E9E42 /* Parse.framework in Frameworks */,
 				F44B0C4316DA404700E6CD88 /* UIKit.framework in Frameworks */,
+				934032D6C6F24D389D78C2FC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D1CABBAA197882AD00A8EED7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D1CABBAB197882DB00A8EED7 /* DEMORootViewController.h */,
+				D1CABBAC197882DB00A8EED7 /* DEMORootViewController.m */,
+				D1CABBAE1978848800A8EED7 /* DEMOMenuViewController.h */,
+				D1CABBAF1978848800A8EED7 /* DEMOMenuViewController.m */,
+				D1CABBB11978862300A8EED7 /* DEMOHomeViewController.m */,
+				D1CABBB21978862300A8EED7 /* DEMONavigationController.m */,
+				D1CABBB31978862300A8EED7 /* DEMOSecondViewController.m */,
+				D1CABBB41978862300A8EED7 /* DEMOHomeViewController.h */,
+				D1CABBB51978862300A8EED7 /* DEMONavigationController.h */,
+				D1CABBB61978862300A8EED7 /* DEMOSecondViewController.h */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		D1DA993219684BD8001E9E42 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +167,7 @@
 				F44B0C4816DA404700E6CD88 /* AudioDemo */,
 				F44B0C4116DA404700E6CD88 /* Frameworks */,
 				F44B0C4016DA404700E6CD88 /* Products */,
+				46C3A11359284D41A559A4DD /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +182,9 @@
 		F44B0C4116DA404700E6CD88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1CABBBA1978879E00A8EED7 /* FacebookSDK.framework */,
+				D1392E0D19781EE900D1A7AA /* Accounts.framework */,
+				D1392E0B19781EB600D1A7AA /* Social.framework */,
 				D1DA994C19686C99001E9E42 /* CoreMedia.framework */,
 				D1DA994919685B93001E9E42 /* SystemConfiguration.framework */,
 				D1DA994719685B89001E9E42 /* StoreKit.framework */,
@@ -152,6 +201,7 @@
 				F44B0C4216DA404700E6CD88 /* UIKit.framework */,
 				F44B0C4416DA404700E6CD88 /* Foundation.framework */,
 				F44B0C4616DA404700E6CD88 /* CoreGraphics.framework */,
+				9FD00C19D0E446F1A825C931 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,6 +209,7 @@
 		F44B0C4816DA404700E6CD88 /* AudioDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D1CABBAA197882AD00A8EED7 /* Controllers */,
 				D1DA993219684BD8001E9E42 /* images */,
 				F44B0C5116DA404700E6CD88 /* AppDelegate.h */,
 				F44B0C5216DA404700E6CD88 /* AppDelegate.m */,
@@ -192,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F44B0C6216DA404700E6CD88 /* Build configuration list for PBXNativeTarget "Memo" */;
 			buildPhases = (
+				B62611E9C10D4C84915DED5C /* Check Pods Manifest.lock */,
 				F44B0C3B16DA404700E6CD88 /* Sources */,
 				F44B0C3C16DA404700E6CD88 /* Frameworks */,
 				F44B0C3D16DA404700E6CD88 /* Resources */,
+				9A39021FCEA4437295040FE5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,14 +315,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9A39021FCEA4437295040FE5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B62611E9C10D4C84915DED5C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F44B0C3B16DA404700E6CD88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1CABBB71978862300A8EED7 /* DEMOHomeViewController.m in Sources */,
 				F44B0C4F16DA404700E6CD88 /* main.m in Sources */,
 				F44B0C5316DA404700E6CD88 /* AppDelegate.m in Sources */,
 				F44B0C5F16DA404700E6CD88 /* ViewController.m in Sources */,
+				D1CABBB01978848800A8EED7 /* DEMOMenuViewController.m in Sources */,
+				D1CABBB91978862300A8EED7 /* DEMOSecondViewController.m in Sources */,
+				D1CABBB81978862300A8EED7 /* DEMONavigationController.m in Sources */,
+				D1CABBAD197882DB00A8EED7 /* DEMORootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +444,7 @@
 		};
 		F44B0C6316DA404700E6CD88 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46C3A11359284D41A559A4DD /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -366,6 +458,13 @@
 				GCC_PREFIX_HEADER = "AudioDemo/AudioDemo-Prefix.pch";
 				INFOPLIST_FILE = "AudioDemo/AudioDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Accelerate,
+					"-framework",
+					QuartzCore,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -374,6 +473,7 @@
 		};
 		F44B0C6416DA404700E6CD88 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46C3A11359284D41A559A4DD /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -387,6 +487,13 @@
 				GCC_PREFIX_HEADER = "AudioDemo/AudioDemo-Prefix.pch";
 				INFOPLIST_FILE = "AudioDemo/AudioDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Accelerate,
+					"-framework",
+					QuartzCore,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
