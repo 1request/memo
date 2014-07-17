@@ -79,8 +79,8 @@
         [self.locationManager requestAlwaysAuthorization];
     }
     
-    NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:kUUID_Estimote];
-    CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID major:1000 minor:2000 identifier:@"beacon"];
+    NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:kUUID_AirLocate];
+    CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID major:100 minor:5 identifier:@"beacon"];
     beaconRegion.notifyEntryStateOnDisplay = YES;
     beaconRegion.notifyOnEntry = YES;
     beaconRegion.notifyOnExit = YES;
@@ -184,11 +184,6 @@
     [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             self.statusLabel.text = @"Uploaded";
-            
-            PFPush *push = [[PFPush alloc] init];
-            [push setChannel:@"all"];
-            [push setMessage:@"You've got a new Memo"];
-            [push sendPushInBackground];
         }
     }];
 }
@@ -303,6 +298,8 @@
     self.locationLabel.text = @"Entered Region";
     
     [self downloadAudio];
+    
+    [self sendLocalNotificationWithMessage:@"You have a new Memo"];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLBeaconRegion *)region
@@ -339,6 +336,32 @@
 {
     NSString *message = [NSString stringWithFormat:@"error: %@ / region: %@", [error description], region.minor];
     NSLog(@"%@", message);
+}
+
+#pragma mark - Local notifications
+
+- (void)sendLocalNotificationWithMessage:(NSString*)message
+{
+    UILocalNotification *notification = [UILocalNotification new];
+    
+    // Notification details
+    notification.alertBody = message;
+    // notification.alertBody = [NSString stringWithFormat:@"Entered beacon region for UUID: %@",
+    //                         region.proximityUUID.UUIDString];   // Major and minor are not available at the monitoring stage
+    notification.alertAction = NSLocalizedString(@"View Details", nil);
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    
+    if ([notification respondsToSelector:@selector(regionTriggersOnce)]) {
+        notification.regionTriggersOnce = YES;
+    }
+    
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+        UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    }
+    
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
 @end
