@@ -16,6 +16,11 @@
 		D1CABBB81978862300A8EED7 /* DEMONavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CABBB21978862300A8EED7 /* DEMONavigationController.m */; };
 		D1CABBB91978862300A8EED7 /* DEMOSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CABBB31978862300A8EED7 /* DEMOSecondViewController.m */; };
 		D1CABBBB1978879E00A8EED7 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CABBBA1978879E00A8EED7 /* FacebookSDK.framework */; };
+		D1CABBC31978923200A8EED7 /* avatar-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CABBC01978923200A8EED7 /* avatar-mask.png */; };
+		D1CABBC41978923200A8EED7 /* message-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CABBC11978923200A8EED7 /* message-hover.png */; };
+		D1CABBC51978923200A8EED7 /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CABBC21978923200A8EED7 /* message.png */; };
+		D1CABBC7197892AE00A8EED7 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CABBC6197892AE00A8EED7 /* background.png */; };
+		D1CABBC9197893C200A8EED7 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CABBC8197893C200A8EED7 /* avatar.png */; };
 		D1DA993119683E8A001E9E42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DA993019683E8A001E9E42 /* Images.xcassets */; };
 		D1DA993419684BD8001E9E42 /* icong-120.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DA993319684BD8001E9E42 /* icong-120.png */; };
 		D1DA993619684EFF001E9E42 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DA993519684EFF001E9E42 /* CoreLocation.framework */; };
@@ -64,6 +69,11 @@
 		D1CABBB51978862300A8EED7 /* DEMONavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMONavigationController.h; path = controllers/DEMONavigationController.h; sourceTree = "<group>"; };
 		D1CABBB61978862300A8EED7 /* DEMOSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMOSecondViewController.h; path = controllers/DEMOSecondViewController.h; sourceTree = "<group>"; };
 		D1CABBBA1978879E00A8EED7 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		D1CABBC01978923200A8EED7 /* avatar-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-mask.png"; sourceTree = "<group>"; };
+		D1CABBC11978923200A8EED7 /* message-hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message-hover.png"; sourceTree = "<group>"; };
+		D1CABBC21978923200A8EED7 /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
+		D1CABBC6197892AE00A8EED7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		D1CABBC8197893C200A8EED7 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		D1DA993019683E8A001E9E42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D1DA993319684BD8001E9E42 /* icong-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icong-120.png"; sourceTree = "<group>"; };
 		D1DA993519684EFF001E9E42 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -152,6 +162,11 @@
 		D1DA993219684BD8001E9E42 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D1CABBC8197893C200A8EED7 /* avatar.png */,
+				D1CABBC6197892AE00A8EED7 /* background.png */,
+				D1CABBC01978923200A8EED7 /* avatar-mask.png */,
+				D1CABBC11978923200A8EED7 /* message-hover.png */,
+				D1CABBC21978923200A8EED7 /* message.png */,
 				D1DA9984196AF043001E9E42 /* playback.png */,
 				D1DA9985196AF043001E9E42 /* playback@2x.png */,
 				D1DA9986196AF043001E9E42 /* record.png */,
@@ -300,15 +315,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1DA998A196AF043001E9E42 /* record.png in Resources */,
+				D1CABBC7197892AE00A8EED7 /* background.png in Resources */,
+				D1CABBC51978923200A8EED7 /* message.png in Resources */,
 				F44B0C4D16DA404700E6CD88 /* InfoPlist.strings in Resources */,
 				D1DA9989196AF043001E9E42 /* playback@2x.png in Resources */,
 				F44B0C5516DA404700E6CD88 /* Default.png in Resources */,
 				F44B0C5716DA404700E6CD88 /* Default@2x.png in Resources */,
+				D1CABBC41978923200A8EED7 /* message-hover.png in Resources */,
 				D1DA993419684BD8001E9E42 /* icong-120.png in Resources */,
 				D1DA998B196AF043001E9E42 /* record@2x.png in Resources */,
 				D1DA993119683E8A001E9E42 /* Images.xcassets in Resources */,
 				F44B0C5916DA404700E6CD88 /* Default-568h@2x.png in Resources */,
+				D1CABBC9197893C200A8EED7 /* avatar.png in Resources */,
 				D1DA9988196AF043001E9E42 /* playback.png in Resources */,
+				D1CABBC31978923200A8EED7 /* avatar-mask.png in Resources */,
 				F44B0C5C16DA404700E6CD88 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
