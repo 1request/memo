@@ -11,6 +11,7 @@
 #import "DEMOSecondViewController.h"
 #import "UIViewController+REFrostedViewController.h"
 #import "DEMONavigationController.h"
+#import "StatusViewController.h"
 
 @interface DEMOMenuViewController ()
 
@@ -96,6 +97,9 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         DEMOHomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"homeController"];
         navigationController.viewControllers = @[homeViewController];
+    } else if (indexPath.section == 0 && indexPath.row == 3) {
+        StatusViewController *statusViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"statusController"];
+        navigationController.viewControllers = @[statusViewController];
     } else {
         DEMOSecondViewController *secondViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"secondController"];
         navigationController.viewControllers = @[secondViewController];

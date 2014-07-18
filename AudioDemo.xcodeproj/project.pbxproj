@@ -10,6 +10,7 @@
 		934032D6C6F24D389D78C2FC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD00C19D0E446F1A825C931 /* libPods.a */; };
 		D1392E0C19781EB600D1A7AA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1392E0B19781EB600D1A7AA /* Social.framework */; };
 		D1392E0E19781EE900D1A7AA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1392E0D19781EE900D1A7AA /* Accounts.framework */; };
+		D1B5E5991978A1B100EDEE7F /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B5E5981978A1B100EDEE7F /* StatusViewController.m */; };
 		D1CABBAD197882DB00A8EED7 /* DEMORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CABBAC197882DB00A8EED7 /* DEMORootViewController.m */; };
 		D1CABBB01978848800A8EED7 /* DEMOMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CABBAF1978848800A8EED7 /* DEMOMenuViewController.m */; };
 		D1CABBB71978862300A8EED7 /* DEMOHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CABBB11978862300A8EED7 /* DEMOHomeViewController.m */; };
@@ -58,6 +59,8 @@
 		9FD00C19D0E446F1A825C931 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1392E0B19781EB600D1A7AA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		D1392E0D19781EE900D1A7AA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		D1B5E5971978A1B100EDEE7F /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusViewController.h; path = controllers/StatusViewController.h; sourceTree = "<group>"; };
+		D1B5E5981978A1B100EDEE7F /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusViewController.m; path = controllers/StatusViewController.m; sourceTree = "<group>"; };
 		D1CABBAB197882DB00A8EED7 /* DEMORootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMORootViewController.h; path = controllers/DEMORootViewController.h; sourceTree = "<group>"; };
 		D1CABBAC197882DB00A8EED7 /* DEMORootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEMORootViewController.m; path = controllers/DEMORootViewController.m; sourceTree = "<group>"; };
 		D1CABBAE1978848800A8EED7 /* DEMOMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMOMenuViewController.h; path = controllers/DEMOMenuViewController.h; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 				D1CABBB41978862300A8EED7 /* DEMOHomeViewController.h */,
 				D1CABBB51978862300A8EED7 /* DEMONavigationController.h */,
 				D1CABBB61978862300A8EED7 /* DEMOSecondViewController.h */,
+				D1B5E5971978A1B100EDEE7F /* StatusViewController.h */,
+				D1B5E5981978A1B100EDEE7F /* StatusViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				F44B0C4F16DA404700E6CD88 /* main.m in Sources */,
 				F44B0C5316DA404700E6CD88 /* AppDelegate.m in Sources */,
 				F44B0C5F16DA404700E6CD88 /* ViewController.m in Sources */,
+				D1B5E5991978A1B100EDEE7F /* StatusViewController.m in Sources */,
 				D1CABBB01978848800A8EED7 /* DEMOMenuViewController.m in Sources */,
 				D1CABBB91978862300A8EED7 /* DEMOSecondViewController.m in Sources */,
 				D1CABBB81978862300A8EED7 /* DEMONavigationController.m in Sources */,
