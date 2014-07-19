@@ -376,4 +376,9 @@
     [self.frostedViewController presentMenuViewController];
 }
 
+- (IBAction)showStatusView
+{
+    self.statusView.hidden = !self.statusView.hidden;
+}
+
 @end

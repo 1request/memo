@@ -20,6 +20,7 @@ static NSString * const kUUID_AirLocate = @"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UIView *statusView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
@@ -28,5 +29,6 @@ static NSString * const kUUID_AirLocate = @"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
 - (IBAction)playTapped:(id)sender;
 
 - (IBAction)showMenu;
+- (IBAction)showStatusView;
 
 @end
