@@ -133,7 +133,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rD3-fu-MDA">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="fUx-aK-anm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="fUx-aK-anm">
                             <connections>
                                 <action selector="showMenu" destination="2" id="SyF-zu-9U9"/>
                             </connections>
@@ -194,7 +194,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="sJd-u7-id2">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="GMf-kX-uze">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="GMf-kX-uze">
                             <connections>
                                 <action selector="showMenu" destination="Rt1-kE-ehK" id="5sE-cG-loR"/>
                             </connections>
@@ -267,7 +267,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4zH-ZO-jb2">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="1K0-Gy-4Qn">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="1K0-Gy-4Qn">
                             <connections>
                                 <action selector="showMenu" destination="HdT-1C-1kx" id="tOi-xm-BZR"/>
                             </connections>
