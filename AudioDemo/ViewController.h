@@ -16,10 +16,17 @@ static NSString * const kUUID_AirLocate = @"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
 
 @interface ViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate, CLLocationManagerDelegate>
 
+// Record and Play controls
 @property (weak, nonatomic) IBOutlet UIButton *recordPauseButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+
+// About the user
+@property (nonatomic, weak) IBOutlet UIImageView *maskImage;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+
+// About Debugging messages
 @property (weak, nonatomic) IBOutlet UIView *statusView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;

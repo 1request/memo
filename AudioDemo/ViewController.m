@@ -109,6 +109,7 @@
         [recorder record];
         
         self.statusLabel.text = @"Recording...";
+        self.maskImage.hidden = NO;
 
     } else {
 
@@ -123,6 +124,8 @@
 
 - (IBAction)stopTapped:(id)sender {
     [recorder stop];
+    self.maskImage.hidden = YES;
+    
     [self uploadAudio];
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
@@ -201,6 +204,7 @@
                                                    object:[avPlayer currentItem]];
         
         self.statusLabel.text = @"Playing";
+        self.maskImage.hidden = NO;
     } else {
         self.statusLabel.text = @"Player not ready";
     }
@@ -209,6 +213,7 @@
 - (void)playerItemDidReachEnd:(NSNotification *)notification
 {
     self.statusLabel.text = @"Play Finished";
+    self.maskImage.hidden = YES;
 }
 
 - (void)downloadAudio
