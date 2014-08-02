@@ -107,6 +107,8 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeBeacon" object:nil userInfo:nil];
 }
 
+#pragma mark - Beacon
+
 - (void)stopBeaconAction:(NSString *)zone
 {
     NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:zone];
@@ -246,6 +248,12 @@
     PFFile *audioFile = [PFFile fileWithName:@"memo.m4a" data:audioData];
     testObject[@"audioFile"] = audioFile;
     testObject[@"deviceId"] = vendorId;
+    
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dict = [defs objectForKey:[NSString stringWithFormat:@"zone-%@", [defs objectForKey:@"selected-beacon"]]];
+    testObject[@"uuid"] = [dict objectForKey:@"uuid"];
+    testObject[@"major"] = [dict objectForKey:@"major"];
+    testObject[@"minor"] = [dict objectForKey:@"minor"];
     
     //save
     [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
