@@ -25,10 +25,19 @@
 
 @implementation ViewController
 @synthesize stopButton, playButton, recordPauseButton;
+@synthesize nameLabel;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Show another view controller
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"username"] == nil) {
+        UIViewController *nameViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"nameController"];
+        [self presentViewController:nameViewController animated:YES completion:nil];
+    } else {
+        nameLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    }
 	
     // Disable Stop/Play button when application launches
 #if !(TARGET_IPHONE_SIMULATOR)

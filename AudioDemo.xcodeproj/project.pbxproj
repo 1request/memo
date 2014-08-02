@@ -41,6 +41,7 @@
 		D1DA9989196AF043001E9E42 /* playback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DA9985196AF043001E9E42 /* playback@2x.png */; };
 		D1DA998A196AF043001E9E42 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DA9986196AF043001E9E42 /* record.png */; };
 		D1DA998B196AF043001E9E42 /* record@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DA9987196AF043001E9E42 /* record@2x.png */; };
+		D1F332A7198A361E009BE59D /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F332A6198A361E009BE59D /* NameViewController.m */; };
 		F44B0C4316DA404700E6CD88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B0C4216DA404700E6CD88 /* UIKit.framework */; };
 		F44B0C4716DA404700E6CD88 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B0C4616DA404700E6CD88 /* CoreGraphics.framework */; };
 		F44B0C4D16DA404700E6CD88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F44B0C4B16DA404700E6CD88 /* InfoPlist.strings */; };
@@ -95,6 +96,8 @@
 		D1DA9985196AF043001E9E42 /* playback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playback@2x.png"; sourceTree = "<group>"; };
 		D1DA9986196AF043001E9E42 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
 		D1DA9987196AF043001E9E42 /* record@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record@2x.png"; sourceTree = "<group>"; };
+		D1F332A5198A361E009BE59D /* NameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameViewController.h; sourceTree = "<group>"; };
+		D1F332A6198A361E009BE59D /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
 		F44B0C3F16DA404700E6CD88 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44B0C4216DA404700E6CD88 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F44B0C4416DA404700E6CD88 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -152,12 +155,12 @@
 				D1CABBAC197882DB00A8EED7 /* DEMORootViewController.m */,
 				D1CABBAE1978848800A8EED7 /* DEMOMenuViewController.h */,
 				D1CABBAF1978848800A8EED7 /* DEMOMenuViewController.m */,
-				D1CABBB11978862300A8EED7 /* DEMOHomeViewController.m */,
-				D1CABBB21978862300A8EED7 /* DEMONavigationController.m */,
-				D1CABBB31978862300A8EED7 /* DEMOSecondViewController.m */,
 				D1CABBB41978862300A8EED7 /* DEMOHomeViewController.h */,
+				D1CABBB11978862300A8EED7 /* DEMOHomeViewController.m */,
 				D1CABBB51978862300A8EED7 /* DEMONavigationController.h */,
+				D1CABBB21978862300A8EED7 /* DEMONavigationController.m */,
 				D1CABBB61978862300A8EED7 /* DEMOSecondViewController.h */,
+				D1CABBB31978862300A8EED7 /* DEMOSecondViewController.m */,
 				D1B5E5971978A1B100EDEE7F /* StatusViewController.h */,
 				D1B5E5981978A1B100EDEE7F /* StatusViewController.m */,
 			);
@@ -237,6 +240,8 @@
 				D1DA993019683E8A001E9E42 /* Images.xcassets */,
 				F44B0C5D16DA404700E6CD88 /* ViewController.h */,
 				F44B0C5E16DA404700E6CD88 /* ViewController.m */,
+				D1F332A5198A361E009BE59D /* NameViewController.h */,
+				D1F332A6198A361E009BE59D /* NameViewController.m */,
 				F44B0C4916DA404700E6CD88 /* Supporting Files */,
 			);
 			path = AudioDemo;
@@ -385,6 +390,7 @@
 				D1B5E5991978A1B100EDEE7F /* StatusViewController.m in Sources */,
 				D1CABBB01978848800A8EED7 /* DEMOMenuViewController.m in Sources */,
 				D1CABBB91978862300A8EED7 /* DEMOSecondViewController.m in Sources */,
+				D1F332A7198A361E009BE59D /* NameViewController.m in Sources */,
 				D1CABBB81978862300A8EED7 /* DEMONavigationController.m in Sources */,
 				D1CABBAD197882DB00A8EED7 /* DEMORootViewController.m in Sources */,
 			);

@@ -15,6 +15,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+
 - (IBAction)showMenu;
+
+- (IBAction)saveName:(id)sender;
 
 @end

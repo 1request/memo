@@ -14,6 +14,8 @@
 
 @implementation StatusViewController
 
+@synthesize nameField;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -111,6 +113,14 @@
     // Present the view controller
     //
     [self.frostedViewController presentMenuViewController];
+}
+
+#pragma mark - Name
+
+- (IBAction)saveName:(id)sender
+{
+    [[NSUserDefaults standardUserDefaults] setObject:nameField.text forKey:@"username"];
+    nameField.text = @"";
 }
 
 @end
