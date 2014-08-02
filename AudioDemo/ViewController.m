@@ -73,6 +73,49 @@
     recorder.meteringEnabled = YES;
     [recorder prepareToRecord];
     
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    [defs setObject:@{@"uuid": kUUID_AirLocate, @"major":[NSNumber numberWithInt:100], @"minor": [NSNumber numberWithInt:5]} forKey:@"zone-0"];
+    [defs setObject:@{@"uuid": kUUID_AirLocate, @"major":[NSNumber numberWithInt:100], @"minor": [NSNumber numberWithInt:6]} forKey:@"zone-1"];
+    [defs setObject:@{@"uuid": kUUID_AirLocate, @"major":[NSNumber numberWithInt:100], @"minor": [NSNumber numberWithInt:7]} forKey:@"zone-2"];
+    [defs setObject:@{@"uuid": kUUID_AirLocate, @"major":[NSNumber numberWithInt:1], @"minor": [NSNumber numberWithInt:1]} forKey:@"zone-3"];
+    [defs setObject:@{@"uuid": kUUID_AirLocate, @"major":[NSNumber numberWithInt:100], @"minor": [NSNumber numberWithInt:5]} forKey:@"zone-4"];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"ChangeBeacon" object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSDictionary *userInfo = [note userInfo];
+        
+        if (userInfo != nil) {
+            NSNumber *oldZone = [userInfo objectForKey:@"oldZone"];
+            if (oldZone != nil) {
+                NSString *oldZoneKey = [NSString stringWithFormat:@"zone-%@", oldZone];
+                [self stopBeaconAction:oldZoneKey];
+            }
+            
+            NSNumber *zone = [userInfo objectForKey:@"zone"];
+            NSString *zoneKey = [NSString stringWithFormat:@"zone-%@", zone];
+        
+            [self startBeaconAction:zoneKey];
+        }
+    }];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeBeacon" object:nil userInfo:nil];
+}
+
+- (void)stopBeaconAction:(NSString *)zone
+{
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:zone];
+    NSString *uuid = [dict objectForKey:@"uuid"];
+    NSNumber *major = [dict objectForKey:@"major"];
+    NSNumber *minor = [dict objectForKey:@"minor"];
+    
+    NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:uuid];
+    CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID major:[major intValue] minor:[minor intValue] identifier:@"beacon"];
+
+    [self.locationManager stopMonitoringForRegion:beaconRegion];
+    [self.locationManager stopRangingBeaconsInRegion:beaconRegion];
+}
+
+- (void)startBeaconAction:(NSString *)zone
+{
     // Beacon
     if (!self.locationManager) {
         self.locationManager = [[CLLocationManager alloc] init];
@@ -88,8 +131,13 @@
         [self.locationManager requestAlwaysAuthorization];
     }
     
-    NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:kUUID_AirLocate];
-    CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID major:100 minor:5 identifier:@"beacon"];
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:zone];
+    NSString *uuid = [dict objectForKey:@"uuid"];
+    NSNumber *major = [dict objectForKey:@"major"];
+    NSNumber *minor = [dict objectForKey:@"minor"];
+    
+    NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:uuid];
+    CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID major:[major intValue] minor:[minor intValue] identifier:@"beacon"];
     beaconRegion.notifyEntryStateOnDisplay = YES;
     beaconRegion.notifyOnEntry = YES;
     beaconRegion.notifyOnExit = YES;

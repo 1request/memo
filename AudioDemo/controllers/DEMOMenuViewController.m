@@ -13,6 +13,7 @@
 #import "DEMONavigationController.h"
 #import "StatusViewController.h"
 #import "NameViewController.h"
+#import "BeaconsTableViewController.h"
 
 @interface DEMOMenuViewController ()
 
@@ -105,6 +106,9 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         DEMOHomeViewController *homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"homeController"];
         navigationController.viewControllers = @[homeViewController];
+    } else if (indexPath.section == 0 && indexPath.row == 1) {
+        BeaconsTableViewController *beaconsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"beaconsController"];
+        navigationController.viewControllers = @[beaconsViewController];
     } else if (indexPath.section == 0 && indexPath.row == 3) {
         StatusViewController *statusViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"statusController"];
         navigationController.viewControllers = @[statusViewController];
@@ -149,7 +153,7 @@
     }
     
     if (indexPath.section == 0) {
-        NSArray *titles = @[@"Manage Members", @"Add Beacon", @"History", @"Settings"];
+        NSArray *titles = @[@"Manage Members", @"Manage Beacons", @"History", @"Settings"];
         cell.textLabel.text = titles[indexPath.row];
     } else {
         NSArray *titles = @[@"John Appleseed", @"John Doe", @"Test User"];

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <REFrostedViewController/REFrostedViewController.h>
 
 @interface BeaconsTableViewController : UITableViewController
+
+- (IBAction)showMenu;
 
 @end
