@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		934032D6C6F24D389D78C2FC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD00C19D0E446F1A825C931 /* libPods.a */; };
+		D138F541198D2B01007256DD /* BeaconsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D138F540198D2B01007256DD /* BeaconsTableViewController.m */; };
 		D1392E0C19781EB600D1A7AA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1392E0B19781EB600D1A7AA /* Social.framework */; };
 		D1392E0E19781EE900D1A7AA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1392E0D19781EE900D1A7AA /* Accounts.framework */; };
 		D1B5E5991978A1B100EDEE7F /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B5E5981978A1B100EDEE7F /* StatusViewController.m */; };
@@ -58,6 +59,8 @@
 /* Begin PBXFileReference section */
 		46C3A11359284D41A559A4DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		9FD00C19D0E446F1A825C931 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D138F53F198D2B01007256DD /* BeaconsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeaconsTableViewController.h; path = controllers/BeaconsTableViewController.h; sourceTree = "<group>"; };
+		D138F540198D2B01007256DD /* BeaconsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeaconsTableViewController.m; path = controllers/BeaconsTableViewController.m; sourceTree = "<group>"; };
 		D1392E0B19781EB600D1A7AA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		D1392E0D19781EE900D1A7AA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D1B5E5971978A1B100EDEE7F /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusViewController.h; path = controllers/StatusViewController.h; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				D1CABBB31978862300A8EED7 /* DEMOSecondViewController.m */,
 				D1B5E5971978A1B100EDEE7F /* StatusViewController.h */,
 				D1B5E5981978A1B100EDEE7F /* StatusViewController.m */,
+				D138F53F198D2B01007256DD /* BeaconsTableViewController.h */,
+				D138F540198D2B01007256DD /* BeaconsTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 				D1CABBB91978862300A8EED7 /* DEMOSecondViewController.m in Sources */,
 				D1F332A7198A361E009BE59D /* NameViewController.m in Sources */,
 				D1CABBB81978862300A8EED7 /* DEMONavigationController.m in Sources */,
+				D138F541198D2B01007256DD /* BeaconsTableViewController.m in Sources */,
 				D1CABBAD197882DB00A8EED7 /* DEMORootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

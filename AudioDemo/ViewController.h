@@ -13,6 +13,7 @@
 
 static NSString * const kUUID_Estimote = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 static NSString * const kUUID_AirLocate = @"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0";
+static NSString * const kUUID_Radius = @"2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6";
 
 @interface ViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate, CLLocationManagerDelegate>
 
