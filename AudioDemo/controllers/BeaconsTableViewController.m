@@ -44,6 +44,8 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeBeacon" object:nil userInfo:@{@"zone": [NSNumber numberWithLong:selected], @"oldZone": [NSNumber numberWithLong:oldSelected]}];
     
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithLong:selected] forKey:@"selected-beacon"];
+    
     [tableView reloadData];
 }
 
@@ -74,7 +76,7 @@
     }
     
     if (indexPath.section == 0) {
-        NSArray *titles = @[@"Radius USB", @"100-5", @"History", @"Settings", @"Something"];
+        NSArray *titles = @[@"100-5", @"100-6", @"100-7", @"Radius USB", @"Estimote"];
         cell.textLabel.text = titles[indexPath.row];
     }
     
@@ -82,6 +84,15 @@
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    NSNumber *beacon = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected-beacon"];
+    
+    if (beacon != nil) {
+        NSInteger saved = [beacon longValue];
+        if (saved == indexPath.row) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
     }
     
     return cell;

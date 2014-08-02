@@ -77,8 +77,8 @@
     [defs setObject:@{@"uuid": kUUID_AirLocate, @"major":[NSNumber numberWithInt:100], @"minor": [NSNumber numberWithInt:5]} forKey:@"zone-0"];
     [defs setObject:@{@"uuid": kUUID_AirLocate, @"major":[NSNumber numberWithInt:100], @"minor": [NSNumber numberWithInt:6]} forKey:@"zone-1"];
     [defs setObject:@{@"uuid": kUUID_AirLocate, @"major":[NSNumber numberWithInt:100], @"minor": [NSNumber numberWithInt:7]} forKey:@"zone-2"];
-    [defs setObject:@{@"uuid": kUUID_AirLocate, @"major":[NSNumber numberWithInt:1], @"minor": [NSNumber numberWithInt:1]} forKey:@"zone-3"];
-    [defs setObject:@{@"uuid": kUUID_AirLocate, @"major":[NSNumber numberWithInt:100], @"minor": [NSNumber numberWithInt:5]} forKey:@"zone-4"];
+    [defs setObject:@{@"uuid": kUUID_Radius, @"major":[NSNumber numberWithInt:1], @"minor": [NSNumber numberWithInt:1]} forKey:@"zone-3"];
+    [defs setObject:@{@"uuid": kUUID_Estimote, @"major":[NSNumber numberWithInt:25124], @"minor": [NSNumber numberWithInt:56476]} forKey:@"zone-4"];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:@"ChangeBeacon" object:nil queue:nil usingBlock:^(NSNotification *note) {
         NSDictionary *userInfo = [note userInfo];
@@ -94,6 +94,13 @@
             NSString *zoneKey = [NSString stringWithFormat:@"zone-%@", zone];
         
             [self startBeaconAction:zoneKey];
+        } else {
+        
+            NSNumber *zone = [[NSUserDefaults standardUserDefaults] objectForKey:@"selected-beacon"];
+            if (zone != nil) {
+                NSString *zoneKey = [NSString stringWithFormat:@"zone-%@", zone];
+                [self startBeaconAction:zoneKey];
+            }
         }
     }];
     
