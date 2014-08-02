@@ -20,7 +20,7 @@
 
 @implementation DEMOMenuViewController
 
-@synthesize label;
+@synthesize nameLabel;
 
 - (void)viewDidLoad
 {
@@ -41,23 +41,23 @@
         imageView.layer.shouldRasterize = YES;
         imageView.clipsToBounds = YES;
         
-        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 0, 24)];
-        label.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
-        label.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
-        label.backgroundColor = [UIColor clearColor];
-        label.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
-        [label sizeToFit];
-        label.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+        nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 0, 24)];
+        nameLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+        nameLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
+        nameLabel.backgroundColor = [UIColor clearColor];
+        nameLabel.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
+        [nameLabel sizeToFit];
+        nameLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         
         [view addSubview:imageView];
-        [view addSubview:label];
+        [view addSubview:nameLabel];
         view;
     });
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    label.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    nameLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
 }
 
 #pragma mark -

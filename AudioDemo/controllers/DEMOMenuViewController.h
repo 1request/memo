@@ -11,6 +11,6 @@
 
 @interface DEMOMenuViewController : UITableViewController
 
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UILabel *nameLabel;
 
 @end
