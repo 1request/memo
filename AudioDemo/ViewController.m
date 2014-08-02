@@ -29,6 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Show another view controller
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"username"] == nil) {
+        UIViewController *nameViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"nameController"];
+        [self presentViewController:nameViewController animated:YES completion:nil];
+    }
 	
     // Disable Stop/Play button when application launches
 #if !(TARGET_IPHONE_SIMULATOR)

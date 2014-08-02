@@ -12,12 +12,15 @@
 #import "UIViewController+REFrostedViewController.h"
 #import "DEMONavigationController.h"
 #import "StatusViewController.h"
+#import "NameViewController.h"
 
 @interface DEMOMenuViewController ()
 
 @end
 
 @implementation DEMOMenuViewController
+
+@synthesize label;
 
 - (void)viewDidLoad
 {
@@ -38,8 +41,8 @@
         imageView.layer.shouldRasterize = YES;
         imageView.clipsToBounds = YES;
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 0, 24)];
-        label.text = @"Harry Ng";
+        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 0, 24)];
+        label.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
         label.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
         label.backgroundColor = [UIColor clearColor];
         label.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
@@ -50,6 +53,11 @@
         [view addSubview:label];
         view;
     });
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    label.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
 }
 
 #pragma mark -
@@ -100,6 +108,9 @@
     } else if (indexPath.section == 0 && indexPath.row == 3) {
         StatusViewController *statusViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"statusController"];
         navigationController.viewControllers = @[statusViewController];
+    } else if (indexPath.section == 0 && indexPath.row == 4) {
+        NameViewController *nameViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"nameController"];
+        navigationController.viewControllers = @[nameViewController];
     } else {
         DEMOSecondViewController *secondViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"secondController"];
         navigationController.viewControllers = @[secondViewController];
