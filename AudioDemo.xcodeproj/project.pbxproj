@@ -42,6 +42,8 @@
 		D1DA9989196AF043001E9E42 /* playback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DA9985196AF043001E9E42 /* playback@2x.png */; };
 		D1DA998A196AF043001E9E42 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DA9986196AF043001E9E42 /* record.png */; };
 		D1DA998B196AF043001E9E42 /* record@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DA9987196AF043001E9E42 /* record@2x.png */; };
+		D1DE1502198E8E380018AAB1 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = D1DE1500198E8E380018AAB1 /* dsym_upload.sh */; };
+		D1DE1503198E8E380018AAB1 /* libCrittercism_v4_3_4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DE1501198E8E380018AAB1 /* libCrittercism_v4_3_4.a */; };
 		D1F332A7198A361E009BE59D /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F332A6198A361E009BE59D /* NameViewController.m */; };
 		F44B0C4316DA404700E6CD88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B0C4216DA404700E6CD88 /* UIKit.framework */; };
 		F44B0C4716DA404700E6CD88 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B0C4616DA404700E6CD88 /* CoreGraphics.framework */; };
@@ -99,6 +101,11 @@
 		D1DA9985196AF043001E9E42 /* playback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playback@2x.png"; sourceTree = "<group>"; };
 		D1DA9986196AF043001E9E42 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
 		D1DA9987196AF043001E9E42 /* record@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record@2x.png"; sourceTree = "<group>"; };
+		D1DE14FD198E8E380018AAB1 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
+		D1DE14FE198E8E380018AAB1 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		D1DE14FF198E8E380018AAB1 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		D1DE1500198E8E380018AAB1 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
+		D1DE1501198E8E380018AAB1 /* libCrittercism_v4_3_4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_4.a; sourceTree = "<group>"; };
 		D1F332A5198A361E009BE59D /* NameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameViewController.h; sourceTree = "<group>"; };
 		D1F332A6198A361E009BE59D /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
 		F44B0C3F16DA404700E6CD88 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +150,7 @@
 				D1DA993619684EFF001E9E42 /* CoreLocation.framework in Frameworks */,
 				F44B0C6616DD09D900E6CD88 /* AVFoundation.framework in Frameworks */,
 				D1DA993A19685B01001E9E42 /* Parse.framework in Frameworks */,
+				D1DE1503198E8E380018AAB1 /* libCrittercism_v4_3_4.a in Frameworks */,
 				F44B0C4316DA404700E6CD88 /* UIKit.framework in Frameworks */,
 				934032D6C6F24D389D78C2FC /* libPods.a in Frameworks */,
 			);
@@ -187,6 +195,18 @@
 				D1DA993319684BD8001E9E42 /* icong-120.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		D1DE14FC198E8E380018AAB1 /* CrittercismSDK */ = {
+			isa = PBXGroup;
+			children = (
+				D1DE14FD198E8E380018AAB1 /* CRFilter.h */,
+				D1DE14FE198E8E380018AAB1 /* Crittercism.h */,
+				D1DE14FF198E8E380018AAB1 /* CrittercismDelegate.h */,
+				D1DE1500198E8E380018AAB1 /* dsym_upload.sh */,
+				D1DE1501198E8E380018AAB1 /* libCrittercism_v4_3_4.a */,
+			);
+			path = CrittercismSDK;
 			sourceTree = "<group>";
 		};
 		F44B0C3616DA404700E6CD88 = {
@@ -237,6 +257,7 @@
 		F44B0C4816DA404700E6CD88 /* AudioDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D1DE14FC198E8E380018AAB1 /* CrittercismSDK */,
 				D1CABBAA197882AD00A8EED7 /* Controllers */,
 				D1DA993219684BD8001E9E42 /* images */,
 				F44B0C5116DA404700E6CD88 /* AppDelegate.h */,
@@ -338,6 +359,7 @@
 				F44B0C5716DA404700E6CD88 /* Default@2x.png in Resources */,
 				D1CABBC41978923200A8EED7 /* message-hover.png in Resources */,
 				D1DA993419684BD8001E9E42 /* icong-120.png in Resources */,
+				D1DE1502198E8E380018AAB1 /* dsym_upload.sh in Resources */,
 				D1DA998B196AF043001E9E42 /* record@2x.png in Resources */,
 				D1DA993119683E8A001E9E42 /* Images.xcassets in Resources */,
 				F44B0C5916DA404700E6CD88 /* Default-568h@2x.png in Resources */,
@@ -496,6 +518,10 @@
 				GCC_PREFIX_HEADER = "AudioDemo/AudioDemo-Prefix.pch";
 				INFOPLIST_FILE = "AudioDemo/AudioDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AudioDemo/CrittercismSDK",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",
@@ -525,6 +551,10 @@
 				GCC_PREFIX_HEADER = "AudioDemo/AudioDemo-Prefix.pch";
 				INFOPLIST_FILE = "AudioDemo/AudioDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AudioDemo/CrittercismSDK",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",

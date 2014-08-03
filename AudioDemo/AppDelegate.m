@@ -8,12 +8,15 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "Crittercism.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [Crittercism enableWithAppID:@"53de40c21787842c72000001"];
+    
     [Parse setApplicationId:@"oelb95gjl7Kd1lcpN2NfyqTwdcFxrjMTeN878ecF"
                   clientKey:@"O16bxcN6PVMghV96fXN4DvE9G0zcNBUca9xhWRkc"];
     
