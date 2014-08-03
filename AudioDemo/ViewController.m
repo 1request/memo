@@ -294,6 +294,27 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"Memo"];
     [query whereKeyExists:@"audioFile"];
+    
+#if !(TARGET_IPHONE_SIMULATOR)
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    NSNumber *zone = [defs objectForKey:@"selected-beacon"];
+    if (zone != nil) {
+        NSString *zoneKey = [NSString stringWithFormat:@"zone-%@", zone];
+        NSDictionary *dict = [defs objectForKey:zoneKey];
+        
+        [query whereKey:@"uuid" equalTo:[dict objectForKey:@"uuid"]];
+        [query whereKey:@"major" equalTo:[dict objectForKey:@"major"]];
+        [query whereKey:@"minor" equalTo:[dict objectForKey:@"minor"]];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Here!" message:@"You should map the beacon first" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        
+        self.statusLabel.text = @"Configuration needed";
+        
+        return;
+    }
+#endif
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error)
         {
