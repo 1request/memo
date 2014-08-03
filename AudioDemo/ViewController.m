@@ -10,6 +10,7 @@
 
 #import "ViewController.h"
 #import <Parse/Parse.h>
+#import <UIDevice-Hardware/UIDevice-Hardware.h>
 
 @interface ViewController () {
     AVAudioRecorder *recorder;
@@ -45,6 +46,10 @@
 #else
     [self downloadAudio];
 #endif
+    // FIXME: For Deven
+    if ([[[UIDevice currentDevice] modelIdentifier] containsString:@"iPhone3"]) {
+        [self downloadAudio];
+    }
     
     // Set the audio file
     NSArray *pathComponents = [NSArray arrayWithObjects:
@@ -387,6 +392,10 @@
                inRegion:(CLBeaconRegion *)region {
     
     NSLog(@"%s Range region: %@ with beacons %@",__PRETTY_FUNCTION__ ,region , beacons);
+    
+//    if ([beacons count] > 0) {
+//        [self downloadAudio];
+//    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLBeaconRegion *)region
